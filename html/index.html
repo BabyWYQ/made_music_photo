@@ -7,17 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>音乐相册</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="">
+
 </head>
 <body>
+
     <!--<section id="section_box">-->
-        <!--<img src="../img/1.jpg" alt="" class="page  no1">-->
-        <!--<img src="../img/2.jpg" alt="" class="page  no2">-->
-        <!--<img src="../img/3.jpg" alt="" class="page  no3">-->
-        <!--<img src="../img/4.jpg" alt="" class="page  no4">-->
-        <!--<img src="../img/5.jpg" alt="" class="page  no5">-->
-        <!--<img src="../img/6.jpg" alt="" class="page  no6">-->
-        <!--<img src="../img/7.jpg" alt="" class="page  no7">-->
+        <!--<img src="../img/11.jpg" alt="" class="page  no1">-->
+        <!--<img src="../img/22.jpg" alt="" class="page  no2">-->
+        <!--<img src="../img/33.jpg" alt="" class="page  no3">-->
+        <!--<img src="../img/44.jpg" alt="" class="page  no4">-->
+        <!--<img src="../img/55.jpg" alt="" class="page  no5">-->
+        <!--<img src="../img/66.jpg" alt="" class="page  no6">-->
+        <!--<img src="../img/77.jpg" alt="" class="page  no7">-->
+        <!--<img src="../img/88.jpg" alt="" class="page  no8">-->
     <!--</section>-->
     <!--<script type="text/javascript">-->
         <!--//得到所有的page-->
@@ -90,12 +92,12 @@
             <!--//到头了-->
             <!--if(idx == 0 && distanceY > 0){-->
                 <!--return;-->
-            <!--}else if(idx == 5 && distanceY < 0){-->
+            <!--}else if(idx == 7 && distanceY < 0){-->
                 <!--return;-->
             <!--}-->
 
             <!--//根据distanceY来确定是否滑动成功-->
-            <!--if(distanceY < -windowHeight / 4){-->
+            <!--if(distanceY < -windowHeight / 5){-->
                 <!--//向上滑动成功-->
                 <!--console.log("↑")-->
 
@@ -103,8 +105,8 @@
                 <!--prev = idx;-->
                 <!--idx = next;-->
                 <!--next++;-->
-                <!--if(next > 6){-->
-                    <!--idx = 6-->
+                <!--if(next > 7){-->
+                    <!--idx = 0-->
                     <!--next = NaN;-->
                 <!--}-->
 
@@ -118,7 +120,7 @@
                 <!--pages[prev].style.webkitTransform = "scale(0)";-->
                 <!--pages[idx].style.webkitTransform = "translateY(0px)";-->
 
-            <!--}else if(distanceY > windowHeight / 4){-->
+            <!--}else if(distanceY > windowHeight / 5){-->
                 <!--console.log("↓")-->
 
                 <!--//先改变信号量-->
@@ -126,12 +128,11 @@
                 <!--idx = prev;-->
                 <!--prev&#45;&#45;;-->
                 <!--if(prev < 0){-->
-                    <!--idx = 0;-->
+                    <!--idx = 7;-->
                     <!--prev = NaN;-->
                 <!--}-->
 
-                <!--console.log(prev,idx,next)-->
-
+                <!--console.log(prev,idx,next);-->
                 <!--//加上过渡-->
                 <!--!isNaN(next) && (pages[next].style.transition = "all 0.4s ease 0s");-->
                 <!--pages[idx].style.transition = "all 0.4s ease 0s";-->
@@ -156,51 +157,110 @@
         <!--var inAnimate = [function(){},function(){},function(){},function(){},function(){},function(){}];-->
 
     <!--</script>-->
+    <!--页面内容-->
+    <div class="main_content">
+        <!--page 1的元素-->
+        <div class="first">
+            <img src="../img/11.jpg" alt="" class="page  no1">
+        </div>
 
-    <!--音乐开始-->
+        <!--page 2 的元素-->
+        <div class="second">
+            <img src="../img/22.jpg" alt="" class="page  no2">
+            <img src="../img/33.jpg" alt="" class="page  no3">
+        </div>
+
+        <!--page 3 的元素-->
+        <div class="third">
+            <img src="../img/44.jpg" alt="" class="page  no4">
+            <img src="../img/55.jpg" alt="" class="page  no5">
+            <img src="../img/66.jpg" alt="" class="page  no6">
+        </div>
+
+        <!--page 4 的元素-->
+        <div class="fourth">
+            <img src="../img/77.jpg" alt="" class="page  no7">
+            <img src="../img/88.jpg" alt="" class="page  no8">
+            <img src="../img/99.jpg" alt="" class="page  no9">
+            <img src="../img/1010.jpg" alt="" class="page  no10">
+        </div>
+
+        <!--page 5 的元素-->
+        <div class="fifth">
+            <img src="../img/1111.jpg" alt="" class="page  no11">
+            <img src="../img/1212.jpg" alt="" class="page  no12">
+            <img src="../img/1313.jpg" alt="" class="page  n013">
+            <img src="../img/1414.jpg" alt="" class="page  no14">
+            <img src="../img/1515.jpg" alt="" class="page  no15">
+            <img src="../img/1616.jpg" alt="" class="page  no16">
+        </div>
+
+    </div>
+    <!--页面小圆点儿-->
+    <div class="circles">
+        <ol>
+            <li class="cur"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="../js/velocity.min.js"></script>
+
+    <script type="text/javascript">
+        //当前页面编号
+        var nowpage = 0;
+        //入场动画数组
+        var inAnimateArr = [function(){},function(){},function(){},function(){},function () {}];
+        //出场动画数组
+        var outAnimateArr = [function(){},function(){},function(){},function(){},function () {}];
+
+        //函数截流
+        var lock = true;
+        //设计进场，出场动画
+        inAnimateArr[0]=function () {
+            console.log("我是0号页面的进场动画");
+
+        }
+
+    </script>
+    <!---------------------------------------------音乐开始---------------------------------------------->
     <div id="btn">
-        <embed src="../mp3/儿童歌曲-一只哈巴狗.mp3"></embed>
-        <audio class="audioPlayer">
-            <source src="../mp3/儿童歌曲-一只哈巴狗.mp3">
+        <audio class="audioPlayer" autoplay loop src="../mp3/儿童歌曲-一只哈巴狗.mp3">
         </audio>
     </div>
-    <!--<meter value="7" max="100" min="0"></meter>-->
-    <!---->
-    <!--<object data="mp3/儿童歌曲-一只哈巴狗.mp3" type=""></object>-->
-    <!--<audio class="audioPlayer">-->
-        <!--<source src="../mp3/儿童歌曲-一只哈巴狗.mp3">-->
-    <!--</audio>-->
-
-    <!--<button id="play">播放</button>-->
-    <!--<button id="muted">静音</button>-->
-    <!--<input type="number" id="volume" value="100" min="0" max="100">-->
     <script>
         var audioPlayer = document.querySelector(".audioPlayer");
-        var btn = document.gitELementById("btn");
-//        var playButton = document.getElementById("play");
-//        var mutedButton = document.getElementById("muted");
-//        var volumeButton = document.getElementById("volume");
-        <!--playButton.onclick = function () {-->
-            <!--if (this.innerText == "播放"){-->
-                <!--this.innerText = "暂停";-->
-                <!--audioPlayer.play();-->
-                <!--console.log(audioPlayer.buffered);-->
-            <!--}else {-->
-                <!--this.innerText = "播放";-->
-                <!--audioPlayer.pause();-->
-                <!--console.log(audioPlayer.currentTime);-->
-            <!--}-->
-        <!--};-->
-        <!--mutedButton.onclick = function () {-->
-            <!--audioPlayer.muted = !audioPlayer.muted;-->
-        <!--};-->
-        <!--volumeButton.onchange = function () {-->
-            <!--audioPlayer.volume = parseInt(this.value)/100;-->
-        <!--};-->
-        <!--audioPlayer.addEventListener("canplay",function (event) {-->
-            <!--console.log(event,audioPlayer.duration);-->
-        <!--});-->
+        var btn = document.getElementById("btn");
+        var singing = true;//明白开关的含义 singing表示正在播放
+        btn.onclick= function(){
+            if(singing){
+//                audioPlayer.muted="muted";
+                audioPlayer.pause();
+                btn .style .background="url(../img/music.jpg) no-repeat -481px -245px";
+                btn.style.animation="none";
+                singing=false;
+            }else{
+                btn .style .background="url(../img/music.jpg) no-repeat -187px -360px";
+                btn.style.animation="music 2s linear 0s infinite";
+                audioPlayer.play();
+                singing=true;
+            }
+        };
     </script>
-   <!--音乐结束-->
+   <!---------------------------------------- 模板-音乐-相片-保存---------------------------------------->
+    <footer id="footer_box">
+        <a href="#" id="demo">模板</a>
+        <a href="#" id="music">音乐</a>
+        <a href="#" id="photo">相册</a>
+        <a href="#" id="save">保存</a>
+    </footer>
+    <script >
+
+    </script>
 </body>
 </html>
