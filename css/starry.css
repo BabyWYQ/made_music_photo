@@ -2,7 +2,7 @@
 html,body{
     font-size: 12px;
     height:100%;
-    background: #00a0df;
+    /*background: #00a0df;*/
 }
 blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul,img{
     margin: 0;
@@ -25,16 +25,20 @@ button,input{
     position: relative;
 }
 .off{
-    width: 9%;
-    height: 5.1%;
+    width: 2.5rem;
+    height: 2.5rem;
     position: absolute;
     right: 6%;
     top: 6%;
     z-index: 5;
-    background: url("../img/normalmusic.svg") no-repeat;
+    background: #fff url("../img/music.png") no-repeat;
     background-size: contain;
+    border-radius: 50%;
     animation: revolve 1s linear infinite;
-    /*-webkit-animation: revolve 1s linear infinite;*/
+    -webkit-animation: revolve 1s linear infinite;
+    -moz-animation: revolve 1s linear infinite;
+    -ms-animation:revolve 1s linear infinite;
+    -o-animation:revolve 1s linear infinite;
 }
 @keyframes revolve{
     0%{
@@ -51,4 +55,60 @@ button,input{
     100%{
         transform: rotateZ(360deg);
     }
+}
+@-moz-keyframes revolve {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+@-ms-keyframes revolve {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+@-o-keyframes revolve {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+.main-page{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+section.current{
+    display: block;
+}
+section.main-page:nth-child(2){
+    background: url("../img/starry1.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+section.main-page:nth-child(3){
+    background: url("../img/starry2.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+section.main-page:nth-child(4){
+    background: url("../img/starry3.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+section.main-page:nth-child(5){
+    background: url("../img/starry4.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+section.main-page:nth-child(6){
+    background: url("../img/starry5.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+section.main-page:nth-child(7){
+    background: url("../img/starry6.jpg") no-repeat;
+    background-size: 100% 100%;
 }
