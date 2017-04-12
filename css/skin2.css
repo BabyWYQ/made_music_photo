@@ -1,0 +1,18 @@
+.main{
+    background:url("../img/body_bg.jpg") no-repeat;
+    background-size: cover;
+}
+.header{
+    background: #6d7e92;
+    color: #fff;
+}
+.portrait{
+    background: url("../img/head2.jpg") no-repeat center;
+    background-size: cover;
+}
+.form button a{
+    color: #fff;
+}
+.form button.immediately{
+    background: #00cb73;
+}
