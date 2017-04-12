@@ -13,21 +13,15 @@ a{
 button,input{
     outline: none;
 }
-.header:after,.head_portrait:after,.portrait:after,.form p:after,
-.form p input.remember:after,.main:after{
-    display: block;
-    content: '';
-    clear: both;
-}
 body{
     width: 100%;
-    height: 100%;
     overflow:hidden;
 }
 .main{
     width: 100%;
     height: 100%;
 }
+/*头部样式*/
 .header{
     width: 100%;
     height: 4%;
@@ -35,6 +29,7 @@ body{
     text-align: center;
     padding: 4% 0;
 }
+/*换肤的样式*/
 .header .skin_icon{
     width: 5%;
     height: 100%;
@@ -46,6 +41,7 @@ body{
     width: 100%;
     height: 100%;
 }
+/*皮肤的小图标*/
 .skin_ic{
     width: 500%;
     height: 300%;
