@@ -28,6 +28,7 @@ body{
     line-height: 200%;
     text-align: center;
     padding: 4% 0;
+    position: relative;
 }
 /*换肤的样式*/
 .header .skin_icon{
@@ -35,7 +36,6 @@ body{
     height: 100%;
     margin-right: 3%;
     float: right;
-    position: relative;
 }
 .header .skin_icon>img{
     width: 100%;
@@ -43,15 +43,15 @@ body{
 }
 /*皮肤的小图标*/
 .skin_ic{
-    width: 500%;
-    height: 300%;
+    width: 100%;
+    height: 100%;
     position: absolute;
     right: 0;
     top: 100%;
     display: none;
 }
 .skin_ic>p{
-    width: 50%;
+    width: 25%;
     height: 100%;
     float: left;
 }

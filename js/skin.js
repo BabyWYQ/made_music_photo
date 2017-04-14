@@ -11,6 +11,10 @@ var oSkin_ic=document.getElementById("skin_ic");
 var skin1=document.getElementById("skin1");
 //皮肤样式2
 var skin2=document.getElementById("skin2");
+//皮肤样式3
+var skin3=document.getElementById("skin3");
+//皮肤样式4
+var skin4=document.getElementById("skin4");
 //让皮肤图标出现
 var a=1;
 oSkin_icon.addEventListener("click",function () {
@@ -45,5 +49,11 @@ skin1.addEventListener("click",function () {
 },false);
 skin2.addEventListener("click",function () {
     disappear("none","../css/skin2.css");
+},false);
+skin3.addEventListener("click",function () {
+    disappear("none","../css/skin3.css");
+},false);
+skin4.addEventListener("click",function () {
+    disappear("none","../css/skin4.css");
 },false);
 
