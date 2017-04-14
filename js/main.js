@@ -26,15 +26,15 @@
     var singing = true;//明白开关的含义 singing表示正在播放
     btn.onclick= function(){
         if(singing){
-            audioPlayers.pause();
-            btn.style.background="url(../img/music.jpg) no-repeat -481px -245px";
-            btn.style.animation="none";
             singing=false;
+            audioPlayers.pause();
+            btn.style.background="url(img/music.jpg) no-repeat -481px -245px";
+            btn.style.animation="none";
         }else{
-            btn.style.background="url(../img/music.jpg) no-repeat -187px -360px";
+            singing=true;
+            btn.style.background="url(img/music.jpg) no-repeat -187px -360px";
             btn.style.animation="music 2s linear 0s infinite";
             audioPlayers.play();
-            singing=true;
         }
     };
 })();
