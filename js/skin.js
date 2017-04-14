@@ -12,16 +12,38 @@ var skin1=document.getElementById("skin1");
 //皮肤样式2
 var skin2=document.getElementById("skin2");
 //让皮肤图标出现
+var a=1;
 oSkin_icon.addEventListener("click",function () {
-    oSkin_ic.style.display="block";
+    a = a == 1 ? 0 : 1;
+    if(a==0){
+        disappear("block");
+    }else {
+        disappear("none")
+    }
 },true);
-//换肤的同时皮肤图标消失
+//封装一个函数disappear让皮肤显示或隐藏和换肤
+function disappear(n,URL) {
+    if (arguments.length > 2 || arguments.length == 0 ||
+    typeof arguments[0] != "string") {
+        throw new Error("对不起，你传进来的参数数量不对或者参数类型不对，请仔细检查哦！");
+        return;
+    } else if (arguments.length == 1) {
+        if (n.length < 6) {
+            oSkin_ic.style.display = n;
+        } else if (n.length > 6) {
+            oSkin_ic.style.display = null;
+            oSkin.href = URL;
+        }
+    } else if (arguments.length == 2) {
+        oSkin_ic.style.display = n;
+        oSkin.href = URL;
+    }
+}
+//调用函数disappear()
 skin1.addEventListener("click",function () {
-    oSkin.href="../css/skin1.css";
-    oSkin_ic.style.display="none";
+    disappear("none","../css/skin1.css");
 },false);
 skin2.addEventListener("click",function () {
-    oSkin.href="../css/skin2.css";
-    oSkin_ic.style.display="none";
+    disappear("none","../css/skin2.css");
 },false);
 
