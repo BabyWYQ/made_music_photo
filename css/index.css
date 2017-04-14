@@ -1,0 +1,249 @@
+body,html{
+    width:100%;
+    height:100%;
+    margin :0;
+    padding:0;
+}
+body{
+    background-color: rgba(96,96,96,0.3);
+    /*background:url(../img/beijing14.jpg);*/
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+/*-----------------------------------------页面内容------------------------------------------------*/
+.swiper-wrapper > div{
+    width:100%;
+    height:100%;
+    perspective: 1000px;
+    overflow: hidden;
+}
+.slider1_pg,.slider2_pg,.slider3_pg,.slider4_pg,.slider5_pg{
+    position: absolute;
+    bottom:0;
+    right:0;
+    width:20%;
+    height:10%;
+}
+/*页面背景*/
+.bg1{
+    background:url(../img/beijing17.jpg);
+}
+.bg2{
+    background:url(../img/beijing18.jpg);
+}
+.bg3{
+    background:url(../img/beijing21.jpg);
+}
+.bg4{
+    background:url(../img/beijing23.jpg);
+}
+.bg5{
+    background:url(../img/beijng22.jpg);
+}
+/*========第一页动画=========*/
+.slider1_pic1 {
+    width: 40%;
+    height: 20%;
+    margin: 20%;
+}
+.slider1_pic2 {
+    width:68%;
+    height:35%;
+    margin:8%;
+}
+.slider1_pic3 {
+    width:40%;
+    height:30%;
+    position:absolute;
+    top:28%;
+    right:10%;
+}
+/*==========第二页动画===============*/
+.slider2_pic1{
+    width:20%;
+    height:10%;
+    margin:23% 0  0 20%;
+}
+.slider2_pic2{
+    width:50%;
+    height:20%;
+    margin:5% 0;
+}
+.slider2_pic3{
+    width:45%;
+    height:25%;
+    float:left;
+    margin: 15% 0 0 6%;
+}
+.slider2_pic4{
+    width:50%;
+    height:20%;
+    float:right;
+    margin:20% 0 0 10%;
+}
+.slider2_pic5{
+    width:50%;
+    height:20%;
+    position:absolute;
+    top:57%;
+    left:25%;
+}
+
+/*===============================第三页动画*/
+.slider3_pic1{
+    width:100%;
+    height:58%;
+    margin:25% 0;
+}
+/*====================================第四页动画*/
+.slider4_pic1{
+   width:100%;
+   height:50%;
+}
+.slider4_pic2{
+    width:50%;
+    height:20%;
+}
+.slider4_pic3{
+    width:50%;
+    height:20%;
+    float:right;
+    margin:2%;
+}
+.slider4_pic4{
+    width:50%;
+    height:20%;
+    float:right;
+    margin:2%;
+}
+/*======================================第五页动画*/
+.slider5_pic1,.slider5_pic3,.slider5_pic5,.slider5_pic7{
+    width:50%;
+    height:20%;
+    float:left;
+    margin-top:6%;
+}
+.slider5_pic2,.slider5_pic4,.slider5_pic6,.slider5_pic8{
+    width:50%;
+    height:20%;
+    float:right;
+    margin-top:6%;
+}
+.slider5_pic9{
+    width:60%;
+    height:40%;
+    position: absolute;
+    top:20%;
+    left:30%;
+}
+
+/*==========================================换页按钮=========================================================*/
+@-webkit-keyframes statr {
+    from{
+        transform: translateY(0px);
+    }to
+     {
+         transform: translateY(10px);
+     }
+}
+@keyframes start {
+    from{
+        transform: translateY(0px);
+    }to
+     {
+         transform: translateY(10px);
+     }
+}
+.cut_btn{
+    position:absolute;
+    left:45%;
+    top:80%;
+    width:11%;
+    height:4%;
+    background:url(../img/sanjiao2.png)no-repeat 0 0 ;
+    animation: start 1.5s  linear 0s infinite ;
+    z-index :1000000;
+    overflow:hidden;
+}
+/*=============================================音乐部分================================================*/
+@-webkit-keyframes music {
+    from {
+        transform: rotate(0deg);
+    }to
+     {
+         transform: rotate(360deg);
+     }
+}
+@keyframes music {
+    from{
+        transform: rotate(0deg);
+    }to
+     {
+         transform: rotate(360deg);
+     }
+}
+#btn{
+    width:24px;
+    height:24px;
+    background:url(../img/music.jpg) no-repeat -187px -360px ;
+    border-radius:50%;
+    border:1px solid black;
+    position:absolute;
+    top:2%;
+    right:5%;
+    animation:music 2s linear 0s infinite;
+    -webkit-animation:music 2s linear 0s infinite;
+    z-index:9000;
+}
+/*!*----------------------------------------底部(模板-音乐-相册-保存)---------------------------------------*!*/
+#footer_box{
+    width:100%;
+    height:10%;
+    position:fixed;
+    left:0;
+    bottom:0;
+    z-index:1000;
+    background:orange;
+    margin:0 auto;
+    display:-webkit-box;
+}
+a{
+    text-decoration: none;
+    border-radius:25%;
+    /*line-height:50%;*/
+    text-align:center;
+    color:#ccc;
+    font-size:13px;
+    background:rgba(0,0,0,0.5);
+    margin:5%;
+    padding:2%;
+    display:inline-block;
+    /*-webkit-box-flex:1;*/
+
+}
+a:nth-child(1){
+    -webkit-box-flex:1;
+}
+a:nth-child(2){
+    -webkit-box-flex:2;
+}
+a:nth-child(3){
+    -webkit-box-flex:3;
+}
+a:nth-child(4){
+    -webkit-box-flex:4;
+}
+
+
+
+
+
+
+
+
+
+
+
